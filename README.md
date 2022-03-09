@@ -12,3 +12,9 @@
 ### Reflections
 - I really need to practive CSS more.
 - Javascript is getting kinda of fun to play around in.
+
+## Lab 03
+
+-Adding a top ten list and a couple of new questions
+
+### Limks and Resources 
