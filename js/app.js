@@ -1,7 +1,8 @@
 'use strict';
+
 function q1(){
   let answerOne = prompt('Am I under 30 years old?').toLowerCase();
-  
+
   if(answerOne === 'y' || answerOne === 'yes'){
     alert('You are correct!');
   }else if(answerOne === 'n'|| answerOne === 'no'){
@@ -56,7 +57,7 @@ function q5(){
 
 function q6(){
   let responeOne = prompt('What is your name?');
-  
+
   alert('Hello  ' + responeOne + ' Welcome to my page I am glad you found it. Any questions please feel free to ask. ' + 'Agian thank you for stopping by ' + responeOne + '!');
   console.log('user response to q1 was ' + responeOne);
 
@@ -65,7 +66,7 @@ function q6(){
 function q7(){
   let myNumber = 85;
   let guesses = 4;
-  
+
   while(guesses > 0){
     let userGuess = prompt('Whats my favorite football jersey number?');
     if(userGuess < myNumber){
@@ -78,18 +79,27 @@ function q7(){
       alert('You guessed correctly!');
       break;
     }
-  
+
   }
 
 }
-let myJerseyNumbers = [54 90 77 68];
-let numberOfTries = 6;
 
-while(numberOfTries > 0){
-  let userGuess = prompt('What jersey numbers have I worn before?');
-  if(userGuess > myJerseyNumbers){
-    numberOfTries--;
-    alert('Thats not it. You have ' + numberOfTries + 'number of tries left');
+function q8(){
+
+  let myJerseyNumbers = ['54 90 77 68'];
+  let numberOfTries = 6;
+
+  while(numberOfTries > 0){
+    let userGuess = prompt('What jersey numbers have I worn before?');
+    if(userGuess > myJerseyNumbers){
+      numberOfTries--;
+      alert('Thats not it. You have ' + numberOfTries + 'number of tries left');
+    } for( let i=0; i < myJerseyNumbers.length; i++){
+      if(userGuess === myJerseyNumbers[i]){
+        alert(`Walla! You got it correct that was my ${myJerseyNumbers}[i]!`);
+      }
+    }
   }
 }
-q1(); q2(); q3(); q4(); q5(); q6(); q7();
+q1(); q2(); q3(); q4(); q5(); q6(); q7(); q8();
+
