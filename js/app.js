@@ -1,10 +1,13 @@
 'use strict';
 
+let finalScore = 0;
+
 function q1(){
   let answerOne = prompt('Am I under 30 years old?').toLowerCase();
 
   if(answerOne === 'y' || answerOne === 'yes'){
     alert('You are correct!');
+    finalScore++;
   }else if(answerOne === 'n'|| answerOne === 'no'){
     alert('Sorry, you are incorrect');
   }
@@ -17,6 +20,7 @@ function q2(){
   
   if(answerTwo === 'y' || answerTwo === 'yes'){
     alert('You are correct!');
+    finalScore++;
   }else if(answerTwo === 'n'|| answerTwo === 'no'){
     alert('Sorry, you are incorrect');
   }
@@ -27,7 +31,8 @@ function q3(){
   let answerThree = prompt('Do I enjoy scary movies?').toLowerCase();
   
   if(answerThree === 'y' || answerThree === 'yes'){
-    alert('You are correct!');
+    alert('You are correct! I love a good horror movie!!!');
+    finalScore++;
   }else if(answerThree === 'n'|| answerThree === 'no'){
     alert('Sorry, you are incorrect');
   }
@@ -38,7 +43,8 @@ function q4(){
   let answerFour = prompt('Have I driven cross country more than once?').toLowerCase();
   
   if(answerFour === 'y' || answerFour === 'yes'){
-    alert('You are correct!');
+    alert('You are correct! I/ve done it 5 times!');
+    finalScore++;
   }else if(answerFour === 'n'|| answerFour === 'no'){
     alert('Sorry, you are incorrect');
   }
@@ -52,6 +58,7 @@ function q5(){
     alert('Sorry you are incorrect! This is real life not anime.');
   }else if(answerFive === 'n'|| answerFive === 'no'){
     alert('You are correct!');
+    finalScore++;
   }
 }
 
@@ -77,6 +84,7 @@ function q7(){
       alert('Sorry that is too high try again. You have '+ guesses +' guesses left');
     } else{
       alert('You guessed correctly!');
+      finalScore++;
       break;
     }
 
@@ -86,20 +94,21 @@ function q7(){
 
 function q8(){
 
-  let myJerseyNumbers = ['54 90 77 68'];
+  let myJerseyNumbers = ['54', '90', '77', '68'];
   let numberOfTries = 6;
-
-  while(numberOfTries > 0){
-    let userGuess = prompt('What jersey numbers have I worn before?');
-    if(userGuess > myJerseyNumbers){
-      numberOfTries--;
-      alert('Thats not it. You have ' + numberOfTries + 'number of tries left');
-    } for( let i=0; i < myJerseyNumbers.length; i++){
-      if(userGuess === myJerseyNumbers[i]){
-        alert(`Walla! You got it correct that was my ${myJerseyNumbers}[i]!`);
+  while(numberOfTries){
+    numberOfTries--;
+    let jerseyGuess = prompt('Guess what jersey numbers I have worn.').toLowerCase();
+    for(let i = 0; i < myJerseyNumbers.length; i++){
+      if(jerseyGuess === myJerseyNumbers[i]){
+        alert(`WINNER WINNER CHICKEN DINNER!! Yes I have worn ${myJerseyNumbers[i]}!`);
+        finalScore++;
+        numberOfTries = 0;
       }
     }
   }
+
 }
 q1(); q2(); q3(); q4(); q5(); q6(); q7(); q8();
+alert(`I have been keeping track of your correct answers. Final score:${finalScore}.`);
 
